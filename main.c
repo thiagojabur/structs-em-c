@@ -23,6 +23,15 @@ int main()
         printf("\nCelular: %s", alunos[i].celular);
         printf("\nIdade: %d \n", alunos[i].idade);
     }
+    FILE *fp;
+    if ((fp=fopen("dados-alunos.txt", "w")) != NULL ) {
+        for(int i=0; i<3; i++) {
+            fprintf(fp, "\nNome: %s", alunos[i].nome);
+            fprintf(fp, "\nCelular: %s", alunos[i].celular);
+            fprintf(fp, "\nIdade: %d \n", alunos[i].idade);
+        }
+        fclose(fp);
+    }
 
     return 0;
 }
